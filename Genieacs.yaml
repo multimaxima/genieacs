@@ -20,7 +20,7 @@ services:
       - GENIEACS_MONGODB_CONNECTION_URL=mongodb://mongo/genieacs
       - GENIEACS_NBI_ACCESS_LOG_FILE=/var/log/genieacs/genieacs-nbi-access.log
       - GENIEACS_UI_ACCESS_LOG_FILE=/var/log/genieacs/genieacs-ui-access.log
-      - GENIEACS_UI_JWT_SECRET=1c3a0eb249897e06156fc307a110ff6c532287e1258e11e5e134ec6bda93fca95e4da1500ae266227d9a993a31903897eb456dec5b69408f3687a09b2ee85454
+      - GENIEACS_UI_JWT_SECRET=<MASUKKAN JWT SECRET KEY>
     image: drumsergio/genieacs:latest
     labels:
       icon: https://genieacs.com/images/favicon.png
