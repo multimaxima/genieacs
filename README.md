@@ -5,8 +5,9 @@ docker compose -f Genieacs.yaml up -d
 
 ## Import Parameter
 ### 1. Copy files ke container
+```bash
 docker cp ./parameter/ mongo-genieacs:/tmp/
-
+```
 ### 2. Restore collections
 ```bash
 docker exec mongo-genieacs mongorestore --db genieacs --collection config              --drop /tmp/parameter/config.bson
@@ -15,14 +16,22 @@ docker exec mongo-genieacs mongorestore --db genieacs --collection presets      
 docker exec mongo-genieacs mongorestore --db genieacs --collection provisions          --drop /tmp/parameter/provisions.bson
 ```
 ## Install Zerotier
+```bash
 curl -s https://install.zerotier.com | sudo bash
+```
 
 ### Cek Status
+```bash
 zerotier-cli status
+```
 ### Cara Join
-zerotier-cli join <network ID>
+```bash
+zerotier-cli join <Zerotier Network ID>
+```
 ### Cara Disconnet
-zerotier-cli leave <network ID>
+```bash
+zerotier-cli leave <Zerotier Network ID>
+```
 
 ## Konfigurasi Firewall Mikrotik
 /ip firewall filter add chain=forward connection-state=established,related action=accept
