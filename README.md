@@ -8,11 +8,12 @@ docker compose -f Genieacs.yaml up -d
 docker cp ./parameter/ mongo-genieacs:/tmp/
 
 ### 2. Restore collections
+```bash
 docker exec mongo-genieacs mongorestore --db genieacs --collection config              --drop /tmp/parameter/config.bson
 docker exec mongo-genieacs mongorestore --db genieacs --collection virtualParameters   --drop /tmp/parameter/virtualParameters.bson
 docker exec mongo-genieacs mongorestore --db genieacs --collection presets             --drop /tmp/parameter/presets.bson
 docker exec mongo-genieacs mongorestore --db genieacs --collection provisions          --drop /tmp/parameter/provisions.bson
-
+```
 ## Install Zerotier
 curl -s https://install.zerotier.com | sudo bash
 
