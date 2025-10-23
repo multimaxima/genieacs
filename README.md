@@ -23,7 +23,7 @@ zerotier-cli join <network ID>
 ### Cara Disconnet
 zerotier-cli leave <network ID>
 
-## Konfigurasi Mikrotik
+## Konfigurasi Firewall Mikrotik
 /ip firewall filter add chain=forward connection-state=established,related action=accept
 
 /ip firewall filter add chain=forward action=accept protocol=tcp src-address=[IP_ZEROTIER_VPS] in-interface=[NAMA_INTERFACE_ZEROTIER] out-interface=[NAMA_INTERFACE_VLAN] dst-port=58000,7547 comment="ACS -> ONU"
