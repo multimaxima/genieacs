@@ -4,10 +4,10 @@
 docker compose -f Genieacs.yaml up -d
 
 ## Import Parameter
-# 1. Copy files ke container
+### 1. Copy files ke container
 docker cp ./parameter/ mongo-genieacs:/tmp/
 
-# 2. Restore collections
+### 2. Restore collections
 docker exec mongo-genieacs mongorestore --db genieacs --collection config              --drop /tmp/parameter/config.bson
 docker exec mongo-genieacs mongorestore --db genieacs --collection virtualParameters   --drop /tmp/parameter/virtualParameters.bson
 docker exec mongo-genieacs mongorestore --db genieacs --collection presets             --drop /tmp/parameter/presets.bson
